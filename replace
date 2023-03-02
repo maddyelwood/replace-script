@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+from sys import argv
+from pathlib import Path
+
+def printUsage():
+    print("Usage: input should be of the form:")
+    print("replace path oldpattern newpattern")
+
+def checkPaths(path):
+    #check absolute path
+    if path.__contains__(oldpattern):
+        path.replace(oldpattern, newpattern)
+        if path.is_dir() == false:
+            #go into file and replace old with new
+
+    #recursive paths
+    if path.is_dir():
+        for entry in path.iterdir():
+            checkPaths(entry)
+
+if len(argv) != 3:
+    printUsage()
+else:
+    path = argv[1]
+    oldpattern = argv[2]
+    newpattern = argv[3]
+
+checkPaths(path)
+
