@@ -1,0 +1,44 @@
+#!/bin/bash
+
+if [[ $# != 1 ]] ; then
+    echo "Usage: input should be of the form:"
+    echo "run-test setup|teardown"
+fi
+
+if [[ $# == 1 && $1 == "setup" ]] ; then
+    mkdir test
+    cd test
+    mkdir edu
+    cd edu
+    mkdir bvu
+    cd bvu
+    mkdir cs
+    cd cs
+    touch DevOps.java
+    cat >DevOps.java <<STOP
+// DevOps.java
+public class DevOps { 
+    public DevOps() {
+    }
+}
+
+STOP
+
+    touch DevOpsMain.java
+    cat >DevOpsMain.java << STOP
+// DevOpsMain.java
+public class DevOpsMain {
+    public static void main(String[] args) {
+        DevOps dev = new DevOps();
+    }
+}
+
+STOP
+
+fi
+
+if [[ $# == 1 && $1 == "teardown" ]] ; then
+    if [[ -d test ]] ; then
+        rm -rf test
+    fi
+fi
