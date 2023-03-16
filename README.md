@@ -10,3 +10,6 @@
     -> Usage: ./run-test setup|teardown
     -> setup creates the 'test' directory and its contents
     -> teardown removes the directories and files within 'test'
+
+# Reminder:
+    -> make files executable before usage 
